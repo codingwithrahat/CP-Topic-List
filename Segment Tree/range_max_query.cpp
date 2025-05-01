@@ -30,7 +30,7 @@ int query(int node, int s, int e, int i, int j){
 
 
 
-    if(e < i || s > j) return 0;
+    if(e < i || s > j) return INT_MIN;
     if(s >= i && e <= j) return tree[node];
 
     int left = node * 2;
