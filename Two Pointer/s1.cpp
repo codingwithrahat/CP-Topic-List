@@ -3,13 +3,19 @@
 #include<bits/stdc++.h>
 using namespace std;
 
+int val1, val2;
+
 bool solve(vector<int>&v, int x, int n){ //tc - O(n)
     int i = 0;
     int j = n - 1;
 
     while(i < j){
         int sum = v[i] + v[j];
-        if(sum == x) return true;
+        if(sum == x){
+            val1 = v[i];
+            val2 = v[j];
+            return true;
+        }    
         else if(sum > x) j--;
         else i++;
     }
@@ -28,7 +34,9 @@ int main(){
 
     bool ans = solve(v, x, n);
 
-    if(ans) cout<<"YES\n";
+    if(ans){
+        cout<<"YES\n"<<"Value: "<<val1<<" "<<val2<<endl;
+    }
     else cout<<"NO\n";
 }
 
