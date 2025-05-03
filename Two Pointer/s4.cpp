@@ -4,17 +4,22 @@
 using namespace std;
 
 void solve(int a[],int n){
+   
     for(int i = 0; i<n; i++){
-        unordered_set<int>st;
+        int l = i + 1;
+        int r = n - 1;
 
-        for(int j = i + 1; j < n; j++){
-            int sum = -(a[i] + a[j]);
-            if(st.find(sum) != st.end()){
-                cout<<sum<<" "<<a[i]<<" "<<a[j]<<endl;
-            }else{
-                st.insert(a[j]);
-            }
+        while(l < r){
             
+            int sum = a[i] + a[l] + a[r];
+
+            if(sum == 0){
+                cout<<a[i]<<" "<<a[l]<<" "<<a[r]<<endl;          
+            }
+            if(sum > 0) r--;
+            else l++;
+                
+        
         }
     }
 }
@@ -24,6 +29,8 @@ int main(){
 
     int a[n];
     for(int i = 0; i<n; i++) cin>>a[i];
+
+    sort(a, a + n);
 
     solve(a, n);
 }
