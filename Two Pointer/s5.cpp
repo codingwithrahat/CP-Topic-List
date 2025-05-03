@@ -1,4 +1,4 @@
-//Find a triplet that sum to a given value
+//Find all triplet that sum to a given value
 
 #include<bits/stdc++.h>
 using namespace std;
