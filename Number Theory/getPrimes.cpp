@@ -10,11 +10,11 @@ bool isPrime(int n){
 	return true;
 }
 
-vector<int> getPrimes(int n){
+vector<int> getPrimes(int n){ 
 
 	vector<int>primes;
-	for(int i = 2; i <= n ; i++){
-		if(isPrime(i)){
+	for(int i = 2; i <= n ; i++){ // tc - n
+		if(isPrime(i)){ //tc - root n
 			primes.push_back(i);
 		}
 		
@@ -30,5 +30,6 @@ int main(){
 
 	for(auto u : v) cout<<u<<" ";
 	cout<<endl;
+	//total tc - n root n 
 	
 }
