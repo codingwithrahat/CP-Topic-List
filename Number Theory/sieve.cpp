@@ -10,7 +10,7 @@ bool isPrime(int n){
 	return marked[n] == false;
 }
 
-void seive(int n){
+void sieve(int n){
 	for(int i = 2; i<n; i++){
 		if(marked[i] == false){
 			for(int j = i + i; j<=n; j += i){
