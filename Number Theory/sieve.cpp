@@ -24,7 +24,7 @@ void sieve(int n){
 int main(){
 	int n; cin>>n;
 
-	seive(n);
+	sieve(n);
 
 	for(int i = 1; i<=n; i++){
 		if(isPrime(i)) cout<<i<<" ";
