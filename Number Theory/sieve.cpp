@@ -3,7 +3,7 @@ using namespace std;
 
 const int N = 1e5 + 7;
 
-bool marked[N];
+bool marked[N]; //by default all are false , global array
 
 bool isPrime(int n){
 	if(n < 2) return false;
