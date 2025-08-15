@@ -1,3 +1,7 @@
+//chcek kth bit is set or unset
+//set means 1
+//unset means 0
+
 #include<bits/stdc++.h>
 using namespace std;
 
