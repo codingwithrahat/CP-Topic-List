@@ -7,11 +7,10 @@ int main(){
 
    unsigned int a = 5;
    unsigned int b = ~a;
+   
+   //signed int use two's complement
+   //unsigned int avoid negative result
 
-  //signed int use two's complement
-  //unsigned int avoid negative result
-
-   //convert 5 into 32 bit binary number
    //~ - flip all the bit of a and store in b
 
    cout<<"original a: "<<a<<endl;
