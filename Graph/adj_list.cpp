@@ -1,29 +1,48 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
+vector<vector<int>> lis;
+vector<bool> visited;
+int node, edge;
 
-int main(){
-    
-        int node, edge;
-        cin >> node >> edge;
+void bfs(int startNode) {
+    visited[startNode] = true;
 
-        int n1, n2;
+    queue<int> q;
+    q.push(startNode);
 
-        vector<vector<int>>v(node + 1);
+    while (!q.empty()) {
+        int x = q.front();
+        q.pop();
 
-        for (int i = 0; i < edge; i++){
-            cin >> n1 >> n2;
-            v[n1].push_back(n2);
-            v[n2].push_back(n1);
-        }
+        cout << "Visited: " << x << endl;
 
-        for(int i = 1; i<node; i++){
-            cout<<i<<" : ";
-            for(auto &neighbor : v[i]){
-                cout<<neighbor<<" ";
+        for (auto &u : lis[x]) {
+            if (!visited[u]) {
+                visited[u] = true; 
+                q.push(u);
             }
-            cout<<endl;
         }
+    }
+}
 
-        
- }
+int main() {
+
+    cin >> node >> edge;
+    lis.assign(node + 1, vector<int>()); 
+    visited.assign(node + 1, false);
+
+    for (int i = 0; i < edge; i++) {
+        int n1, n2;
+        cin >> n1 >> n2;
+        lis[n1].push_back(n2);
+        lis[n2].push_back(n1);
+    }
+
+    int startNode;
+    cin >> startNode;
+
+    bfs(startNode);
+
+    return 0;
+}
