@@ -29,8 +29,8 @@ void bfs(int startNode) {
 int main() {
 
     cin >> node >> edge;
-    lis.resize(node + 1); 
-    visited.resize(node + 1, false);
+    lis.assign(node + 1, vector<int>()); 
+    visited.assign(node + 1, false);
 
     for (int i = 0; i < edge; i++) {
         int n1, n2;
