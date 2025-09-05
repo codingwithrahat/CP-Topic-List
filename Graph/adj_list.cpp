@@ -9,7 +9,7 @@ int main(){
 
         int n1, n2;
 
-        vector<int>v[node];
+        vector<vector<int>>v(node + 1);
 
         for (int i = 0; i < edge; i++){
             cin >> n1 >> n2;
@@ -17,7 +17,7 @@ int main(){
             v[n2].push_back(n1);
         }
 
-        for(int i = 0; i<node; i++){
+        for(int i = 1; i<node; i++){
             cout<<i<<" : ";
             for(auto &neighbor : v[i]){
                 cout<<neighbor<<" ";
