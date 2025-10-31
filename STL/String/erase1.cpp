@@ -11,4 +11,6 @@ int main(){
 
    //output - RatHossan 
 
+   //TC - O(n)
+
 }
