@@ -18,7 +18,7 @@ int main() {
         
         int mid = l + (r - l) / 2;
         
-        if(key <= a[mid]){
+        if(a[mid] >= key){
             ans = mid;
             r = mid - 1;
         }else{
