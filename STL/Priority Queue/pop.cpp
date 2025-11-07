@@ -10,7 +10,7 @@ int main(){
    pq.push(9);
    pq.push(2);
 
-   pq.pop(); //remove the top element (largest)
+   pq.pop(); //remove the top element (largest) , TC-O(logn)
 
    cout<<pq.size()<<endl; //print 3
 
