@@ -10,7 +10,7 @@ int main(){
    pq.push(9);
    pq.push(2);
 
-   cout<<pq.size()<<endl; //print 4
+   cout<<pq.size()<<endl; //print 4 , TC- O(1)
 
 
 }
