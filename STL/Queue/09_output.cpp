@@ -14,6 +14,10 @@ int main(){
       cout<<q.front()<<" "; //doesn't support top() , print - 5, 3, 9, 2
       q.pop();
    }
+   //TC - O(n)
+
+   //for(auto &u : q) not support 
+   //only container support itteration
 
    cout<<endl;
 
