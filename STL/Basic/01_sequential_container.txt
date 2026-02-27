@@ -1,0 +1,6 @@
+all this ar elike array sequntial implememnt
+
+- Vectors
+- Stack
+- Queue
+_ pair (not a container, its a class)

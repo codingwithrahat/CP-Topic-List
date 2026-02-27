@@ -1,0 +1,6 @@
+value stored in sorted order default
+
+- maps
+- multimaps
+- set 
+- multiset

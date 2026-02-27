@@ -1,0 +1,13 @@
+
+
+- upper bound
+- lower bound
+- sort(compoarator)
+- max_element
+- min_element
+- accumulate
+- reverse
+- connt 
+- find
+- next_permutation
+- prev_permutation

@@ -1,0 +1,6 @@
+
+- similer to pointers
+
+- point to memtoy address of containers
+- vector<int>::iterator it; (decleare a iterator)
+- 2 types - continuity and discontinuity
