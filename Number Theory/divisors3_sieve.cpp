@@ -21,17 +21,19 @@ int32_t main(){
 
    druto();
 
-   int n; cin>>n;
+   int t; cin>>t;
 
-   vector<int>d(MX);
+   vector<int>d(MX + 1);
 
+
+   //precompute
    for(int i = 1; i<=MX; i++){
       for(int j = i ; j<=MX; j+=i){
          d[j]++;
       }
    }
 
-   while(n--){
+   while(t--){
       int x; cin>>x;
 
       cout<<d[x]<<endl;
