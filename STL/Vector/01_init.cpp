@@ -21,9 +21,8 @@ int main(){
 
 
     //init using copy constructor(refference)
-    vector<int>&r = m; //TC - O(n), r is not a copy , r is like another name of m
-    vector<int>&r2(m); //both are same 
-    r2.push_back(4);  //4 also add in m
+    vector<int>&r = m; //TC - O(1), r is not a copy , r is like another name of m
+    r.push_back(4);  //4 also add in m
     //if i chnage r2 it will change m also
 
     
@@ -46,11 +45,28 @@ int main(){
 
 
 
-    //int with size and value
+    //init with size and value
     vector<int>v2(3, 5);
 
-    for(int i = 0; i<v.size(); i++) cout<<v[i]<<" ";  // 5 5 5
+    for(int i = 0; i<v2.size(); i++) cout<<v2[i]<<" ";  // 5 5 5
     cout<<endl;
+
+
+
+    //init with range constructor
+    set<int>s;
+
+    s.insert(1);
+    s.insert(2);
+    s.insert(3);
+
+    vector<int>v3(s.begin(), s.end());
+
+    for(int i = 0; i<v3.size(); i++) cout<<v3[i]<<" ";
+    cout<<endl;
+
+    //Copies all elements from the set into a vector.
+    //TC - O(n), n is size of set
 
 
 
