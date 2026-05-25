@@ -14,7 +14,7 @@ struct Node {
 
 };
 
-
+//TC - O(n)
 //root - left - right
 void preOrder(Node *root){
     if(root == NULL) return;

@@ -14,6 +14,8 @@ struct Node {
 
 };
 
+
+//TC - O(n)
 static int idx = -1;
 Node* buildTree(vector<int>&pre){
 

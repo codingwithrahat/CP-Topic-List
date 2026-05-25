@@ -14,6 +14,7 @@ struct Node {
 
 };
 
+//TC - O(n)
 //left - right - root
 void postOrder(Node *root){
     if(root == NULL) return;

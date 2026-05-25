@@ -14,7 +14,7 @@ struct Node {
 
 };
 
-//TC - O(n)
+//print level by level (next line)
 void levelOrder(Node *root){
 
     queue<Node*>q;
@@ -22,13 +22,21 @@ void levelOrder(Node *root){
     if(root != NULL) q.push(root);
 
     while(!q.empty()){
-        Node *cur = q.front();
-        q.pop();
+        int sz = q.size();
+        
 
-        cout<<cur->val<<" ";
+        for(int i = 0; i<sz; i++){
+            Node *cur = q.front();
+            q.pop();
 
-        if(cur->left != NULL) q.push(cur->left);
-        if(cur->right != NULL) q.push(cur->right);
+            cout<<cur->val<<" ";
+
+            if(cur->left != NULL) q.push(cur->left);
+            if(cur->right != NULL) q.push(cur->right);
+
+        }
+
+        cout<<endl;
 
     }
 }

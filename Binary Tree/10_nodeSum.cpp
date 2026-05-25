@@ -14,17 +14,26 @@ struct Node {
 
 };
 
-//TC - O(n)
-//left - root - right
-void inOrder(Node *root){
+//using traversal
+static int sum2 = 0;
+void preOrderSum(Node *root){
     if(root == NULL) return;
 
-    inOrder(root->left);
+    sum2 += root->val;
 
-    cout<<root->val<<" ";
-
-    inOrder(root->right);
+    preOrderSum(root->left);
+    preOrderSum(root->right);
 }
+
+int sum(Node *root){
+    if(root == NULL) return 0;
+
+    int leftSum = sum(root->left);
+    int rightSum = sum(root->right);
+
+    return root->val + leftSum + rightSum;
+}
+
 
 int main(){
     Node *root = new Node(1);
@@ -33,6 +42,8 @@ int main(){
     root->left->left = new Node(4);
     root->right->right = new Node(5);
 
-    inOrder(root);  // 4 2 1 3 5
-    cout<<endl;
+    cout<<sum(root)<<endl; // 15
+
+    preOrderSum(root);
+    cout<<sum2<<endl;  //15
 }

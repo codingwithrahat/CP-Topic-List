@@ -14,17 +14,28 @@ struct Node {
 
 };
 
-//TC - O(n)
-//left - root - right
-void inOrder(Node *root){
+
+//using traversal
+static int cnt2 = 0;
+void preOrderCnt(Node *root){
     if(root == NULL) return;
 
-    inOrder(root->left);
+    cnt2++;
 
-    cout<<root->val<<" ";
-
-    inOrder(root->right);
+    preOrderCnt(root->left);
+    preOrderCnt(root->right);
 }
+
+
+int cnt(Node *root){
+    if(root == NULL) return 0;
+
+    int left = cnt(root->left);
+    int right = cnt(root->right);
+
+    return 1 + left + right;
+}
+
 
 int main(){
     Node *root = new Node(1);
@@ -33,6 +44,8 @@ int main(){
     root->left->left = new Node(4);
     root->right->right = new Node(5);
 
-    inOrder(root);  // 4 2 1 3 5
-    cout<<endl;
+    cout<<cnt(root)<<endl; // 5
+
+    preOrderCnt(root);
+    cout<<cnt2<<endl; // 5
 }
