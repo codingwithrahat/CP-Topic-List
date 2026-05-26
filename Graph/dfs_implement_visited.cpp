@@ -2,7 +2,7 @@
 using namespace std;
 
 vector<vector<int>>lis;
-vector<int>visited;
+vector<bool>visited;
 
 int node, edge;
     
