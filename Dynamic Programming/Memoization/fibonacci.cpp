@@ -1,41 +1,24 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-#define druto() ios::sync_with_stdio(false);cin.tie(NULL)
-#define endl '\n'
-#define ff first
-#define ss second
-#define int long long
-#define double long double
-#define pb push_back
-#define ll long long
-
-const int mod = 1e9 + 7;
-
-vector<int>m;
-
-
-int f(int n){
+int f(int n, vector<int>&memo){
   
 
-   if(n == 1) return 0;
-   if(n == 2) return 1;
+   if(n == 0 || n == 1) return n;
 
-   if(m[n] != -1) return m[n];
+   if(memo[n] != -1) return memo[n];
 
-   return m[n] = f(n - 1) + f( n - 2);
+   return memo[n] = f(n - 1, memo) + f( n - 2, memo);
 
 }
 
 int32_t main(){
       
-   druto();
+   int n = 8;
 
-   int n; cin>>n;
+   vector<int>memo(n + 1, -1);
 
-   m.assign(n + 1, -1);
-
-   cout<<f(n)<<endl;
+   cout<<f(n, memo)<<endl;  // 21
 
 
 }
