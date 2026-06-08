@@ -19,13 +19,16 @@ int main(){
                 dp[i][j] = 0;
             }else{
                 
-                if(j < w[i - 1]){
-                    dp[i][j] = dp[i - 1][j];   //not pick the item
+                int take = 0;
+
+                if(w[i - 1] <= j){
+                    take = dp[i -1][j - w[i - 1]] + p[i - 1];
                 }
-                else{
-                    dp[i][j] = max(dp[i - 1][j], dp[i -1][j - w[i - 1]] + p[i - 1]);
-                    //max (notpick, pick);
-                }
+                
+                int notTake = dp[i - 1][j];
+
+                dp[i][j] = max(take, notTake);                    
+                
             }
         }
     }
