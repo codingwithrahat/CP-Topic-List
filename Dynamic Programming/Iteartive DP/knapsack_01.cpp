@@ -2,12 +2,12 @@
 using namespace std;
 
 int main(){
-    vector<int> w = {3, 2, 4, 5, 1};
-    vector<int> p = {50, 40, 70, 80, 10};
+    vector<int> wt = {3, 2, 4, 5, 1};
+    vector<int> val = {50, 40, 70, 80, 10};
 
     int cap = 7;
 
-    int item = w.size();
+    int item = wt.size();
 
     vector<vector<int>>dp(item + 1, vector<int>(cap + 1));
 
@@ -21,8 +21,8 @@ int main(){
                 
                 int take = 0;
 
-                if(w[i - 1] <= j){
-                    take = dp[i -1][j - w[i - 1]] + p[i - 1];
+                if(wt[i - 1] <= j){
+                    take = val[i - 1] + dp[i -1][j - wt[i - 1]];
                 }
                 
                 int notTake = dp[i - 1][j];
