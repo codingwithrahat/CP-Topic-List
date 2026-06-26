@@ -4,11 +4,11 @@ using namespace std;
 int main(){
     pair<int, string>p;
 
-    p = make_pair(1, "Rahat");
+    p = make_pair(1, "Rahat");  
 
     cout<<p.first<<" "<<p.second<<endl;
 
-    p = {1, "Rahat"};
+    p = {1, "Rahat"};  
 
     cout<<p.first<<" "<<p.second<<endl;
 
@@ -25,6 +25,8 @@ int main(){
 
     cout<<p.first<<endl;  //not 1 , replace by 8
 
+    //O(1) for all the above operations
+
 
     //user input
     pair<int, int>p4;
@@ -32,6 +34,9 @@ int main(){
     cin>>p4.first>>p4.second;
 
     cout<<p4.first<<" "<<p4.second<<endl;
+
+
+
 
 
 }

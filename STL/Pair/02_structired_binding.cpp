@@ -7,12 +7,14 @@ int main(){
     //call by val
     auto [a, s] = p;   //only support in c++17 and gcc maybe 8+
  
-    cout<<a<<" "<<s<<endl;  // 1 Rahat
+    cout<<a<<" "<<s<<endl;  // 1 Rahat 
 
     a = 5; //p.first will not change, without &
     
     cout<<p.first<<endl; //1
 
+    //O(1) for copy in a
+    //O(string length) for copy in s
 
 
 
@@ -21,6 +23,10 @@ int main(){
     a1 = 5;  //p.first will change
 
     cout<<p.first<<endl; //5
+
+    // O(1) to create references (no copy)
+
+
 
 
 }
