@@ -20,10 +20,15 @@ int32_t main(){
 
    vector<string>v;
 
+
+   // Start from the smallest lexicographical permutation
    sort(s.begin(), s.end());
 
+
+   // Store the first permutation
    v.pb(s);
-   
+
+   // Generate and store all remaining permutations
    while(next_permutation(s.begin(), s.end())){
       v.pb(s);
    }

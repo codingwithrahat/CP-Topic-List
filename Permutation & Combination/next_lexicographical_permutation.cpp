@@ -18,8 +18,12 @@ int32_t main(){
 
    string s; cin>>s;
 
+   // Generate the next lexicographical permutation of the string.
+
    bool flag = next_permutation(s.begin(), s.end());
 
+   // If the next permutation exists, print it.
+   // Otherwise, the current string is already the last permutation.
    if(flag){
       cout<<s<<endl;
    }
